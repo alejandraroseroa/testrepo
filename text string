@@ -1,0 +1,15 @@
+from cmath import isnan, nan 
+from typing_extensions import Self 
+import pandas as pd 
+import numpy as np
+from IPython.display import display
+import sqlalchemy as sqla
+from fuzzywuzzy import fuzz
+from fuzzywuzzy import process
+import re
+
+validacion = pd.read_excel('/Users/alejandrarosero/Desktop/TEST CC CO PYTHON MATCH.xlsx')
+
+validacion['CEDULA_VALIDACION'] = validacion.VALIDACION_CC.str.extract('(\d+)')
+
+print(validacion)
